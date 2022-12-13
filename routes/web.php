@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\Login;
+use App\Http\Controllers\Auth\Register;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login', [Login::class, "index"])->name('login.name');
+Route::get('register', [Register::class, "index"])->name('register.index');
