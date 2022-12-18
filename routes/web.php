@@ -20,4 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [Login::class, "index"])->name('login.name');
-Route::get('register', [Register::class, "index"])->name('register.index');
+Route::get('/register', [Register::class, "index"])->name('register.index');
