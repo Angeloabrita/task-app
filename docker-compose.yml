@@ -15,21 +15,36 @@ services:
     volumes:
       - ./:/var/www
     networks:
-      - mynetwork
+      - app-network
     
  #Nginx Service
-  nginx:
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: front-nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - 8080:80
+  #   volumes:
+  #     - ./:/var/www
+  #     - ./nginx/conf.d:/etc/nginx/conf.d/
+  #   networks:
+  #     - mynetwork
+
+   #Nginx Service
+  webserver:
     image: nginx:alpine
-    container_name: front-nginx
+    container_name: webserver
     restart: unless-stopped
+    tty: true
     ports:
-      - 8080:80
+      - "80:80"
+      - "443:443"
     volumes:
       - ./:/var/www
-      - ./nginx/conf.d:/etc/nginx/conf.d/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
-      - mynetwork
+      - app-network
   
 networks:
-  mynetwork:
+   app-network:
     driver: bridge

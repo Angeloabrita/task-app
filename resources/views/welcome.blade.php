@@ -22,7 +22,7 @@
           <div class="max-w-md">
             <h1 class="mb-5 text-5xl font-bold">Lista de tarefas</h1>
             <p class="mb-5">Consumindo uma API sem fazer MER....</p>
-            <a href="{{route('login.name')}}" class="btn btn-primary">Entrar</a>
+            <a href="{{route('login.index')}}" class="btn btn-primary">Entrar</a>
             <a href="{{route('register.index')}}" class="btn btn-secondary">Cadastrar</a>
 
 

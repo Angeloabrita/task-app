@@ -19,5 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [Login::class, "index"])->name('login.name');
+Route::get('/login', [Login::class, "index"])->name('login.index');
 Route::get('/register', [Register::class, "index"])->name('register.index');
+
+Route::get('/test', [Register::class, "register"])->name('register.register');
+
