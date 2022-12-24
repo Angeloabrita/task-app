@@ -17,33 +17,19 @@ services:
     networks:
       - app-network
     
- #Nginx Service
-  # nginx:
-  #   image: nginx:alpine
-  #   container_name: front-nginx
-  #   restart: unless-stopped
-  #   ports:
-  #     - 8080:80
-  #   volumes:
-  #     - ./:/var/www
-  #     - ./nginx/conf.d:/etc/nginx/conf.d/
-  #   networks:
-  #     - mynetwork
-
    #Nginx Service
-  webserver:
+  nginx:
     image: nginx:alpine
-    container_name: webserver
     restart: unless-stopped
-    tty: true
+    container_name: nginx-front
     ports:
-      - "80:80"
-      - "443:443"
+      - 5000:80
     volumes:
       - ./:/var/www
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/conf.d:/etc/nginx/conf.d/
     networks:
       - app-network
+
   
 networks:
    app-network:
