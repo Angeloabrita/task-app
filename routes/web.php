@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\Delete;
 use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\Auth\Register;
+use App\Http\Controllers\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,11 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//landcope main page
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
+//route for login user
 Route::get('/login', [Login::class, "index"])->name('login.index');
+Route::post('/login',[Login::class, "login"])->name('login.login');
+Route::post('/logout',[Login::class, "logout"])->name('login.logout');
+
+
+//route for registration new users
 Route::get('/register', [Register::class, "index"])->name('register.index');
 Route::post('/register', [Register::class, "register"])->name('register.register');
+
+//route after login or register new user
+Route::get('/dashboard', [Dashboard::class, "index"])->name('dashboard.index');
+
 

@@ -7,11 +7,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
+use Nette\Utils\Json;
 
 class Register extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        /**
+         * check if has token in cokie if have return the dashbord view or auth view
+         */
+
+        if(Cookie::has('api_token')){
+            return Redirect::route('dashboard.index');
+        }
+
         return view('auth.register');
     }
 
@@ -36,11 +45,8 @@ class Register extends Controller
 
         if ($response->getStatusCode() == 200) {
             // Request was successful save the token in a cookie 
-            //$token = $response->json()['token'] ;
-
-            //Cookie::queue(Cookie::make('api_token', $token, '/', null, false, true));
-            
-            return redirect()->route('dashboard.index', $response);
+            Cookie::queue(Cookie::make('api_token', json_encode($response->json()), 300));
+            return Redirect::route('dashboard.index');
 
         } else {
 

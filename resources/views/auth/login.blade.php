@@ -21,20 +21,20 @@
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div class="card-body">
 
-              <form action="" method="post">
+              <form action="{{route('login.login')}}" method="POST">
 
-
+                @csrf
                 <div class="form-control">
                   <label class="label">
                     <span class="label-text">Email</span>
                   </label>
-                  <input type="text" placeholder="email" class="input input-bordered" id="email" required/>
+                  <input type="text" placeholder="email" class="input input-bordered" id="email" name="email" required/>
                 </div>
                 <div class="form-control">
                   <label class="label">
                     <span class="label-text">Senha</span>
                   </label>
-                  <input type="text" placeholder="senha" class="input input-bordered" id  required/>
+                  <input type="password" placeholder="senha" class="input input-bordered" id="password" name="password"  required/>
                   <label class="label">
                     <a href="{{route('register.index')}}" class="label-text-alt link link-hover">Não tem cadastro?</a>
                   </label>
