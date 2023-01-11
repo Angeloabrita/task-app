@@ -11,9 +11,18 @@ class Item extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public $delUrl, $editUrl, $showUrl;
+    public $creator, $text, $date;
+    public function __construct($delUrl, $editUrl, $showUrl,$creator, $text, $date)
     {
-        //
+       
+        $this->delUrl = $delUrl;
+        $this->editUrl = $editUrl;
+        $this->showUrl = $showUrl;
+        $this->creator = $creator;
+        $this->text = $text;
+        $this->date = $date;
     }
 
     /**
