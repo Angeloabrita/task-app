@@ -6,16 +6,16 @@ use Illuminate\View\Component;
 
 class NavBar extends Component
 {
-    public $userName, $logoutUrl;
+    public $userName, $tokenApi;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($userName, $logoutUrl)
+    public function __construct($userName,  $tokenApi)
     {
         $this->userName = $userName;
-        $this->logoutUrl = $logoutUrl;
+        $this->tokenApi = $tokenApi;
     }
 
     /**

@@ -30,7 +30,7 @@ class Dashboard extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class Dashboard extends Controller
      */
     public function show($id)
     {
-        //
+        return view('auth.show' );
     }
 
     /**
@@ -64,6 +64,7 @@ class Dashboard extends Controller
     public function edit($id)
     {
         //
+        return view('auth.edit');
     }
 
     /**

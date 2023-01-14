@@ -10,13 +10,12 @@
 
     <title>Login</title>
 </head>
-<body>
     <section>
-      <div class="hero min-h-screen bg-gray-600">
+      <div class="hero min-h-screen bg-no-repeat bg-cover bg-clip-content " >
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div class="text-center lg:text-left">
-            <h1 class="text-5xl font-bold">Login now!</h1>
-            <p class="py-6">Faça o seu login e começe a cadastras as tarefas que jamais talvez sejam cumprodas</p>
+            <h1 class="text-5xl font-bold text-gray-100">Login now!</h1>
+            <p class="py-6 text-gray-100">Faça o seu login e começe a cadastras as tarefas que jamais talvez sejam cumprodas</p>
           </div>
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div class="card-body">

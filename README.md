@@ -1,10 +1,9 @@
 # API LARAVEL LISTA DE TAREFA
 
 ## User story
-- Criar uma conta para o usuário
-- o usuário precisará logar a conta caso contrário será negado acesso a criação ou a edição de tarefas
-- O usuário logado poderá ver todas tarefas
-- O usuário poderá criar, editar ou excluir somente suas tarefas
+- Consumir a API API-TASK
+- Autenticar, persistir e gerar  CRUD via HTTP Client
+- Criar interface limpa e responsiva
 
 
 ## Deployment
